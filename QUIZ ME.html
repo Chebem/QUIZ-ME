@@ -1,135 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QUIZ ME</title>
-  <link rel="stylesheet" href ="style.css">
+  <link rel="stylesheet" href="style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/7f81cefca0.js" crossorigin="anonymous"></script>
-
-  
 </head>
-
-
 <body>
-  <main class="main">
-    <header class = "header">
-      <a href="#" class="logo"> Quiz Me</a>
-      
-              <h1>Quiz Me</h1>
-      <nav class="navbar">
-        <a href="#" class="active" >Home</a>
-        <a href="#popup"id="trigger">Sign in </a>
-        
-        
-       
-
-        <a href="#">About</a>
-        <a href="#">Service</a>
-        <a href="#">Contact</a>
-
-      </nav>
-
-      <div id="popup" class="overlay">
-        <div class="wrapper">
-          <a href="#" class="close">&times;</a>
-          <div class="column details">
-
-            <div class="signin">
-            <h1>Sign in</h1>
-            <input type="email"placeholder="Username">
-            <input type="password" placeholder="Password">
-            <a href="#">Forgot Passwrord</a>
-            <button class="form-submit">Sign in</button>
-            <span>You don't have an account yet?
-              <button id="signup"> Create it now!</button>
-            </span>
-          </div>
-
-          <div class="signup">
-            <input type="name" placeholder="Full Name">
-            <input type="email" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button class="form-submit">Sign in</button>
-            <span>Already have an account?
-              <button id="signin">Sign in</button>
-            </span>
-          </div>
-
-        </div>
-
-          <div class="column content">
-              <div class="signin">
-                <h1>Welcome Back!</h1>
-                <p>To Keep connected with us please login in with your personal information</p>
-              </div>
-              <div class="signup">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start your journey through Digital Knowledge with us!</p>
-              </div>
-
-          </div>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#">Sign in</a>
+      <a href="#" class="scroll-link">About</a>
+      <a href="#">Service</a>
+      <a href="#">Contact</a>
+    </nav>
+    <form action="#" class="search-bar">
+      <input type="text" placeholder="Discover...">
+      <button type="submit"><i class='bx bx-search'></i></button>
+    </form>
+  </header>
+  
+  <div class="container">
+    <div class="content">
+      <h2 class="logo">Quiz Me</h2>
+      <div class="text-sci">
+        <h1>Jump into the world of Ai!</h1>
+        <p>Our fun, quiz-based platform turns learning into an adventure. Designed for students, non-tech professionals, and hobbyists alike, we're making AI education accessible and exciting for everyone!</p>
+        <button class="start-btn">Start Quiz</button>
+        <div class="social-icons">
+          <a href="#"><i class='bx bxl-linkedin'></i></a>
+          <a href="#"><i class='bx bxl-instagram'></i></a>
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
+    </div>
 
-      <form action="#" class="search-bar">
-        <input type="text" placeholder="Discover...">
-        <button type="submit"><i class='bx bx-search' ></i></button>
-      </form>
-    </header>
-    <section class="home">
-      <div class="home-content">
-        <h1> Quiz Me</h1>
-        <p>
-          "Jump into the game of AI! Our fun, quiz-based platform turns learning into an adventure. 
-          Designed for students, non-tech professionals, and hobbyists alike, 
-          we're making AI education accessible and exciting for everyone!"
-           </p>
-           <div class="social-icons">
-            <a href="#"><i class='bx bxl-linkedin' ></i></a>
-            <a href="#"><i class='bx bxl-instagram' ></i></a>
-            <a href="#"><i class='bx bxl-facebook' ></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <button class="start-btn">Start Quiz</button>
+    <div class="logreg-box">
+      <div class="form-box login"> 
+        <form action="#">
+          <h2>Sign in</h2>
+          <div class="input-box">
+            <span class="icon"><i class='bx bxs-envelope'></i></span>
+            <input type="email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+            <input type="password" required>
+            <label>Password</label>
+          </div>
+
+          <div class="remember-forgot">
+            <label> <input type="checkbox" id="remember-me">Remember me</label>
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <button type="submit" 
+          class="btn">Sign in</button>
+
+          <div class="login-register">
+            <p>Don't have an account yet? 
+              <a href="#" class="register-link">Create it now!</a></p>
+          </div>
+        </form>
       </div>
-
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-
-  </main>
-  <script>
-  $('.signup').hide();
-
-   $('signin, #signup').on(
-    'click',
-    function()
-    {
-      $('.signin, .signup').toogle()
-    }
-   )
-
-   document.addEventListener("DOMContentLoaded", function () {
-    const trigger = document.getElementById("trigger"); // Get the trigger element by its ID
-    const popup = document.getElementById("#popup"); // Get the popup container
-
-    // Add event listener to the trigger element
-    trigger.addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent default link behavior
-      popup.classList.add("active"); // Add 'active' class to display the popup
-    });
-
-    // Close the popup when the close button is clicked
-    document.querySelector(".close").addEventListener("click", function () {
-      popup.classList.remove("active"); // Remove 'active' class to hide the popup
-    });
-  });
-  </script>
+    </div>
+  </div>
 
 
+  <footer>
+    <p>&copy; 2024 QUIZ ME. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
