@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QUIZ ME</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/7f81cefca0.js" crossorigin="anonymous"></script>
 </head>
@@ -12,22 +13,30 @@
   <header class="header">
     <nav class="navbar">
       <a href="#">Home</a>
-      <a href="#">Sign in</a>
-      <a href="#" class="scroll-link">About</a>
-      <a href="#">Service</a>
+      <a href="#" class="login-link">Sign in</a>
+      <a href="https://www.notion.so/Introduction-to-Beginner-Friendly-Intelligent-Quiz-Website-BIQ-c3fc4f08510b4b96b3cd82f4fa4c44d6?pvs=4" class="scroll-link">About</a>
       <a href="#">Contact</a>
+      <div class="dropdown">
+        <a href="#">Service</a>
+        <div class="dropdown-content">
+          <a href="ai-information.html">AI Information</a>
+          <a href="#">AI Courses</a>
+          <a href="#">AI Workshops</a>
+        </div>
+        </div>     
     </nav>
-    <form action="#" class="search-bar">
-      <input type="text" placeholder="Discover...">
+    <form action="#" class="search-bar" onsubmit="showSearchInfo(event)">
+      <input type="text" id="search-input" placeholder="Discover...">
       <button type="submit"><i class='bx bx-search'></i></button>
     </form>
   </header>
-  
+
+
   <div class="container">
     <div class="content">
       <h2 class="logo">Quiz Me</h2>
       <div class="text-sci">
-        <h1>Jump into the world of Ai!</h1>
+        <h1 class="animated-text">Jump into the world of AI!</h1>
         <p>Our fun, quiz-based platform turns learning into an adventure. Designed for students, non-tech professionals, and hobbyists alike, we're making AI education accessible and exciting for everyone!</p>
         <button class="start-btn">Start Quiz</button>
         <div class="social-icons">
@@ -40,7 +49,7 @@
     </div>
 
     <div class="logreg-box">
-      <div class="form-box login"> 
+      <div class="form-box login">
         <form action="#">
           <h2>Sign in</h2>
           <div class="input-box">
@@ -56,12 +65,11 @@
           </div>
 
           <div class="remember-forgot">
-            <label> <input type="checkbox" id="remember-me">Remember me</label>
+            <label><input type="checkbox" id="remember-me">Remember me</label>
             <a href="#">Forgot password?</a>
           </div>
 
-          <button type="submit" 
-          class="btn">Sign in</button>
+          <button type="submit" class="btn">Sign in</button>
 
           <div class="login-register">
             <p>Don't have an account yet? 
@@ -69,13 +77,45 @@
           </div>
         </form>
       </div>
+
+      <div class="form-box register">
+        <form action="#">
+          <h2>Sign Up</h2>
+          <div class="input-box">
+            <span class="icon"><i class='bx bxs-user'></i></span>
+            <input type="text" required>
+            <label>Name</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon"><i class='bx bxs-envelope'></i></span>
+            <input type="email" required>
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+            <input type="password" required>
+            <label>Password</label>
+          </div>
+
+          <div class="remember-forgot">
+            <label><input type="checkbox">I agree to the terms & conditions</label>
+          </div>
+
+          <button type="submit" class="btn">Sign Up</button>
+
+          <div class="login-register">
+            <p>Already have an account?
+              <a href="#" class="login-link">Sign in</a></p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-
 
   <footer>
     <p>&copy; 2024 QUIZ ME. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>
